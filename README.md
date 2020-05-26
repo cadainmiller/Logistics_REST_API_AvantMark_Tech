@@ -1,4 +1,4 @@
-# Logostic_REST_API_AvantMark_Tech
+# Logistics_REST_API_AvantMark_Tech
 
 Drivers logistics Web Application
 
