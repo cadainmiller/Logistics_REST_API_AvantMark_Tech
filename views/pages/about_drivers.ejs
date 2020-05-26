@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Company ABC - Home</title>
+    <link
+      rel="shortcut icon"
+      href="../images/fav_icon.png"
+      type="image/x-icon"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+      rel="stylesheet"
+    />
+    <!-- Bulma Version 0.8.2-->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/bulma@0.8.2/css/bulma.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="../css/style.css" />
+  </head>
+
+  <body>
+    <%- include('../partials/header'); -%>
+    <section class="hero"></section>
+
+    <div class="container">
+      <h1>Here is a list of all of the pictures on page: <%= pageNumber %></h1>
+      <div class="row">
+        <% for(var i = 0;i < driverData.results.length;i++){ %>
+        <div
+          style="
+            background-color: <%= driverData.results[i].color %>;
+            width: 290px;
+            border: 2px solid red;
+          "
+        >
+          <img
+            src="<%= driverData.results[i].urls.thumb %>"
+            style="width: 286px; height: 180px;"
+          />
+          <p>
+            By: <%= driverData.results[i].user.name %> on <%=
+            driverData.results[i].created_at %>
+          </p>
+          <p>
+            Dimensions: <%= driverData.results[i].width %>X<%=
+            driverData.results[i].height %>
+          </p>
+          <p>Likes: <%= driverData.results[i].likes %></p>
+        </div>
+        <% } %>
+      </div>
+    </div>
+    <script async type="text/javascript" src="../js/bulma.js"></script>
+  </body>
+</html>
